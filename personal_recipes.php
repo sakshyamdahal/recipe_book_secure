@@ -40,13 +40,13 @@
 				<h2>Saved Recipes</h2>
 				<img class="dividerline" src="img/sep.png" alt="">
 			</div>
-			
 			<div id="grid-gallery" class="grid-gallery">
 
 					<section class="grid-wrap">
 						<ul class="grid">
 							<li class="grid-sizer"></li><!-- for Masonry column width -->				
 							<?php 
+
 								// displays user feedback
 								for($i = 0; $i < count($recipe); $i++)
 								{
@@ -66,13 +66,14 @@
 					<section class="slideshow">
 						<ul>
 							<?php 
+
 								for($i = 0; $i < count($recipe); $i++)
 								{
 									$row = $recipe[$i];
 									$image_url =  htmlspecialchars($row['img_url'], ENT_QUOTES, 'UTF-8');
 									$title =  htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8');
 									$description =  htmlspecialchars($row['description'], ENT_QUOTES, 'UTF-8');
-									echo "<li><figure><img src=$image_url alt=\"\"/><figcaption><h3>$title</h3><p>$description</p><button class=\"btn\">View recipe</button></figcaption></figure></li>";
+									echo "<li><figure><img src=$image_url alt=\"\"/><figcaption><h3>$title</h3><p>$description</p></figcaption></figure></li>";
 
 								}
 							?>

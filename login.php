@@ -1,9 +1,9 @@
-<?php //require_once("includes/connection.php"); ?>
-<?php //require_once("includes/functions.php"); ?>
-<?php //find_selected_page(); ?>
+<?php require_once( "includes/session.php" ); ?>
+<?php require_once("includes/connection.php"); ?>
+<?php require_once("includes/functions.php"); ?>
+<?php if (logged_in()) { redirect_to("index.php");} ?>
+
 <?php include("includes/header.php"); ?>
-
-
 <div id="login-form">
 
 	<input type="radio" checked id="login" name="switch" class="hide">

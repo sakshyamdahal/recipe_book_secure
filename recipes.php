@@ -53,10 +53,13 @@
 								for($i = 0; $i < $num_rows; $i++)
 								{
 									$row = $recipe_arr[$i];
+									$recipe_id =  htmlspecialchars($row['recipe_id'], ENT_QUOTES, 'UTF-8');
 									$image_url =  htmlspecialchars($row['img_url'], ENT_QUOTES, 'UTF-8');
 									$title =  htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8');
 									$description =  htmlspecialchars($row['description'], ENT_QUOTES, 'UTF-8');
-									echo "<li><figure><img src=$image_url alt=\"\"/><figcaption><h3>$title</h3><p>$description</p><button class=\"btn\">Add recipe</button></figcaption></figure></li>";
+									$token = urlencode($_SESSION['csrfToken']);
+									echo "<li><figure><img src=$image_url alt=\"\"/><figcaption><h3>$title</h3><p>$description</p><button class=\"btn\">
+									<a href=add_recipe.php?recipe_id=$recipe_id&token=$token>Add recipe</a></button></figcaption></figure></li>";
 								}
 
 							?>
